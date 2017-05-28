@@ -64,7 +64,7 @@ public class SimpleObjectMenu {
     public static class CreateDomainEvent extends ActionDomainEvent<SimpleObjectMenu> {}
     @Action(domainEvent = CreateDomainEvent.class)
     @MemberOrder(sequence = "3")
-    public SimpleObject Crear(
+    public SimpleObject CrearCliente(
             @ParameterLayout(named="Name")
             final String name) {
         return simpleObjectRepository.crearCliente(name);

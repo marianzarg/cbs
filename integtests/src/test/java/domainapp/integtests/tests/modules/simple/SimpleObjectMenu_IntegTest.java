@@ -97,7 +97,7 @@ public class SimpleObjectMenu_IntegTest extends DomainAppIntegTest {
             transactionService.nextTransaction();
 
             // when
-            wrap(menu).Crear("Faz");
+            wrap(menu).CrearCliente("Faz");
 
             // then
             final List<SimpleObject> all = wrap(menu).Listar();
@@ -111,14 +111,14 @@ public class SimpleObjectMenu_IntegTest extends DomainAppIntegTest {
             FixtureScript fs = new SimpleObjectsTearDown();
             fixtureScripts.runFixtureScript(fs, null);
             transactionService.nextTransaction();
-            wrap(menu).Crear("Faz");
+            wrap(menu).CrearCliente("Faz");
             transactionService.nextTransaction();
 
             // then
             expectedExceptions.expectCause(causalChainContains(SQLIntegrityConstraintViolationException.class));
 
             // when
-            wrap(menu).Crear("Faz");
+            wrap(menu).CrearCliente("Faz");
             transactionService.nextTransaction();
         }
 
